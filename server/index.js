@@ -1,12 +1,17 @@
 const express = require('express');
+const app = express();
 const cors = require('./configs/cors');
+
 const connectToDB = require('./configs/database');
 const webConstants = require('./web-constants');
+const routes = require('./routes');
+const { authMiddleware } = require('./middlewares/auth');
 
-const app = express();
 
-app.use(cors);
-app.use(express.json())
+app.use(cors())
+app.use(express.json());
+app.use(authMiddleware)
+app.use(routes)
 
 connectToDB()
 .then(() => {

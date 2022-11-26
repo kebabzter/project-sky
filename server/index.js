@@ -1,30 +1,15 @@
-const express = require("express");
-const mongoose = require("mongoose");
+const express = require('express');
+const cors = require('./configs/cors');
+const connectToDB = require('./configs/database');
+const webConstants = require('./web-constants');
 
-const cors = require("./middlewares/cors");
-const dataController = require("./controllers/dataController");
-const usersController = require("./controllers/usersController");
+const app = express();
 
-const connectionString = "mongodb://localhost:27017/cloudy";
+app.use(cors);
+app.use(express.json())
 
-
-async function start() {
-    await mongoose.connect(connectionString);
-    console.log('Database connected');
-    
-    const app = express();
-    
-    app.use(express.json());
-    app.use(cors());
-    
-    app.get("/", (req, res) => {
-        res.json({ message: "REST Service operational" });
-    });
-    
-    app.use('/users', usersController);
-    app.use('/data/catalog', dataController);
-    
-    app.listen(3030, () => console.log("REST service started"));
-}
-
-start();
+connectToDB()
+.then(() => {
+    app.listen(webConstants.PORT, () => console.log(`Server listening on http:localhost:${webConstants.PORT}`))
+})
+.catch((err) => console.log(err))

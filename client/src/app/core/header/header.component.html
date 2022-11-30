@@ -2,16 +2,33 @@
     <h2>cloudy <img src="../../../assets/logo.png" alt=""></h2>
     <div class="main">
         <ul>
-            <li><a href="" >Home</a></li>
-            <li><a href="">Explore</a></li>
+            <li><a routerLink="/">Home</a></li>
+            <li><a routerLink="/projects/explore">Explore</a></li>
         </ul>
     </div>
-    <div class="auth">
+
+    <ng-template #loggedOutTemplate>
         <ul>
-            <li><a href="">Profile</a></li>
-            <li><a href="">Login</a></li>
-            <li><a href="">Register</a></li>
-            <li><a href="">Logout</a></li>
+            <li>
+                <a routerLink="/auth/login">Login</a>
+            </li>
+            <li>
+                <a routerLink="/auth/register">Register</a>
+            </li>
         </ul>
-    </div>
+    </ng-template>
+
+    <ng-template #loggedInTemplate>
+        <ul>
+            <li>
+                <a routerLink="/auth/profile">{{user?.username}}'s profile</a>
+            </li>
+            <li>
+                <a routerLink="/auth/logout">Logout</a>
+            </li>
+        </ul>
+    </ng-template>
+
+    <ng-container *ngTemplateOutlet="isLoggedIn ? loggedInTemplate : loggedOutTemplate"></ng-container>
+
 </div>

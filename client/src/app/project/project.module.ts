@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { ProjectRoutingModule } from './project-routing.module';
 import { AllProjectsComponent } from './all-projects/all-projects.component';
-
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button'
 
 @NgModule({
   declarations: [
@@ -11,7 +12,9 @@ import { AllProjectsComponent } from './all-projects/all-projects.component';
   ],
   imports: [
     CommonModule,
-    ProjectRoutingModule
+    ProjectRoutingModule,
+    MatCardModule,
+    MatButtonModule
   ],
   exports:[
     AllProjectsComponent

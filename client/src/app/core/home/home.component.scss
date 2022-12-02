@@ -7,12 +7,26 @@
     height: calc(100vh - 5rem);
 }
 
-.container h1{
-    top: 300px;
+.display{
+    top: 350px;
     position: absolute;
     text-align: center;
     color: #F0EBD8;
     width: 100%;
+}
+
+.display h1{
     font-size: 4rem;
     font-weight: 100;
+    user-select: none;
+}
+
+.display button{
+    margin-top: 60px;
+    background-color: #1D2D44;
+    font-size: 1.5rem;
+    letter-spacing:0.10rem;
+    font-weight: 100;
+    min-width: 220px;
+    min-height: 55px;
 }

@@ -15,6 +15,6 @@ export class LoginComponent {
       username: 'User',
       email: 'email@gmail.com'
     } as any;
-    this.router.navigate(['/']);
+    // this.router.navigate(['/']);
   }
 }

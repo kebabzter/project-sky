@@ -1,0 +1,18 @@
+.container{
+    background-color: #0D1321;
+    background-size: cover;
+    background-position: center;
+    
+    width: 100%;
+    height: calc(100vh - 5rem);
+}
+
+.container h1{
+    top: 300px;
+    position: absolute;
+    text-align: center;
+    color: #F0EBD8;
+    width: 100%;
+    font-size: 4rem;
+    font-weight: 100;
+}

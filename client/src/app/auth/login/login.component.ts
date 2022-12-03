@@ -9,6 +9,7 @@ import { FormControl, NgForm, Validators } from '@angular/forms';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
+
 export class LoginComponent {
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router, private authService: AuthService) {

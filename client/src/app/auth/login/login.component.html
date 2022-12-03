@@ -1,20 +1,20 @@
 <div class="container">
-    <div class="form">
-        <fieldset>
-        <form #form="ngForm" (ngSubmit)="loginHandler(form)">
-                <h1>Login</h1>
-                <div class="example-container">
-                    
-                    <mat-form-field appearance="fill">
-                        <mat-label>Enter your password</mat-label>
-                        <input matInput placeholder="pass">
-                    </mat-form-field>
-                    
-                </div>
-            </form>
-            <button type="submit"class="animate__animated animate__fadeInDown" mat-stroked-button>Explore</button>
-        </fieldset>
+<!-- <div class="bg-image"></div> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
+    <div class="form animate__animated animate__fadeIn">
+        <fieldset>
+            <h1>Login</h1>
+        <form>
+            <label>Email</label>
+            <input type="text" placeholder="email@email.com" name="email">
+            <label>Password</label>
+            <input type="password" placeholder="Password123" name="password">
+
+        </form>
+        <button mat-stroked-button>Login</button>
+        <p>Don't have an account yet? <a routerLink="/auth/register">Register here</a></p>
+        </fieldset>
     </div>
-    
 </div>
+

@@ -1,48 +1,106 @@
-// .example-container mat-form-field {
-//   margin-left: 8px;
-// }
+.example-container mat-form-field {
+    margin-left: 8px;
+}
 
-// mat-label {
-//   color:#f0ebd8ff;
-// }
+mat-label {
+    color: #f0ebd8ff;
+}
 
-// ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-//   color: #f0ebd8ff;
-//   opacity: 0.5; /* Firefox */
-// }
+.bg-image {
+    background-image: url("../../../assets/nightsky1.jpg");
+
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+
+    height: 100%;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+::placeholder {
+    color: #1d2d44ff;
+    opacity: 0.5;
+}
 
 
-// fieldset {
-//   position: absolute;
-//   text-align: center;
-//   width: 20rem;
-//   background-color: #1d2d44ff;
-// }
+fieldset {
+    position: absolute;
+    text-align: center;
+    border-radius: 10px;
+    border-color: #1d2d44ff;
+    background-color: #1d2d44ff;
+    box-shadow: 0px 20px 50px rgb(14, 33, 49);
+}
 
-// .container{
-//     background-color: #0D1321;
-//     background-size: cover;
-//     background-position: center;
-//     user-select: none;
-//     width: 100%;
-//     height: calc(100vh - 5rem);
-// }
+.container {
+    background-color: #0D1321;
+    background-size: cover;
+    background-position: center;
+    user-select: none;
+    width: 100%;
+    height: calc(100vh - 6.5rem);
+}
 
-// .form{
-//     left: 700px;
-//     top: 200px;
-//     position: absolute;
-//     text-align: center;
-//     width: 100%;
-//     color: #f0ebd8ff;
-// }
+.form {
+    top: 100px;
+    left: 35%;
+    padding: 140px;
+    margin: auto;
+    text-align: center;
+    width: 360px;
+    height: 340px;
+    color: #f0ebd8ff;
+    position: absolute;
+}
 
-// button{
-//     margin-top: 60px;
-//     background-color: #3e5c76ff;
-//     font-size: 1rem;
-//     letter-spacing:0.10rem;
-//     font-weight: 100;
-//     min-width: 110px;
-//     min-height: 25px;
-// }
+label {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-size: 1rem;
+    padding-left: 1.5rem;
+    color: #f0ebd8ff;
+}
+
+input {
+    width: 20rem;
+    height: 2rem;
+    padding-left: 12px;
+    border: none;
+    border: 1px solid #3e5c76ff;
+    background-color: #f0ebd8ff;
+    border-radius: 8px;
+    margin-left: 0.5rem;
+}
+
+button {
+    margin-top: 60px;
+    background-color: #3e5c76ff;
+    font-size: 1.1rem;
+    letter-spacing: 0.10rem;
+    font-weight: 100;
+    min-width: 140px;
+    min-height: 35px;
+}
+
+p.error {
+    text-align: left;
+    color: #f0ebd8ff;
+    padding-left: 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+p {
+    text-align: center;
+    padding-top: 8px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+p>a {
+    font-weight: 400;
+    color: #748cabff;
+}

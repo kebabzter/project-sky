@@ -1,6 +1,8 @@
 .project-card {
     max-width: 200px;
     background-color: #1D2D44;
+    margin-left: 55px;
+    margin-right: 55px;
 }
 
 .explore-title{
@@ -16,6 +18,7 @@
 
 .project-cards{
     margin-left: 10rem;
+    display: flex;
 }
 .project-card button{
     color: #F0EBD8;

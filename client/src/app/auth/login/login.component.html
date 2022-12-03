@@ -1,1 +1,20 @@
-<p>login works!</p>
+<div class="container">
+    <div class="form">
+        <fieldset>
+        <form #form="ngForm" (ngSubmit)="loginHandler(form)">
+                <h1>Login</h1>
+                <div class="example-container">
+                    
+                    <mat-form-field appearance="fill">
+                        <mat-label>Enter your password</mat-label>
+                        <input matInput placeholder="pass">
+                    </mat-form-field>
+                    
+                </div>
+            </form>
+            <button type="submit"class="animate__animated animate__fadeInDown" mat-stroked-button>Explore</button>
+        </fieldset>
+
+    </div>
+    
+</div>

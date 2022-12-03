@@ -7,7 +7,10 @@ import { LogoutComponent } from './logout/logout.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AuthRoutingModule } from './auth-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatInputModule} from '@angular/material/input'
+import { MatSelectModule } from '@angular/material/select'
+import { MatButtonModule } from '@angular/material/button'
 
 
 @NgModule({
@@ -22,7 +25,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SharedModule,
     AuthRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatButtonModule
   ],
   // exports:[
   //   LoginComponent,

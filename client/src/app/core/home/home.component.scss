@@ -1,11 +1,28 @@
 .container{
-    background-color: #0D1321;
+    background-color: #0d1321ff;
     background-size: cover;
     background-position: center;
     
     width: 100%;
     height: calc(100vh - 5rem);
 }
+
+.bg-image {
+    /* The image used */
+    background-image: url("../../../assets/nightsky1.jpg");
+  
+    /* Add the blur effect */
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+  
+    /* Full height */
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 
 .display{
     top: 350px;

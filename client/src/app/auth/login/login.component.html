@@ -1,20 +1,33 @@
 <div class="container">
-<!-- <div class="bg-image"></div> -->
+    <!-- <div class="bg-image"></div> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
     <div class="form animate__animated animate__fadeIn">
         <fieldset>
             <h1>Login</h1>
-        <form>
-            <label>Email</label>
-            <input type="text" placeholder="email@email.com" name="email">
-            <label>Password</label>
-            <input type="password" placeholder="Password123" name="password">
-
-        </form>
-        <button mat-stroked-button>Login</button>
-        <p>Don't have an account yet? <a routerLink="/auth/register">Register here</a></p>
+            <form #form="ngForm" (ngSubmit)="login(form)">
+                <label>Email</label>
+                <input #email="ngModel" ngModel type="text" placeholder="Email..." name="email" email required>
+                <ng-container *ngIf="email.touched">
+                    <p class="error" *ngIf="email.errors?.['required']">Email is required!</p>
+                    <p class="error" *ngIf="email.errors?.['email']">Email should be valid!</p>
+                </ng-container>
+                <label>Password</label>
+                <input #password="ngModel" ngModel type="password" placeholder="Password..." name="password" required
+                    minlength="6" maxlength="12">
+                <ng-container *ngIf="password.touched">
+                    <p class="error" *ngIf="password.errors?.['required']">Password is required!</p>
+                    <p class="error" *ngIf="password.errors?.['minlength']">Password should have more than 6 characters!
+                    </p>
+                    <p class="error" *ngIf="password.errors?.['maxlength']">Password should have less than 12
+                        characters!</p>
+                </ng-container>
+                <ng-container *ngIf="errors">
+                    <p class="mainerror">{{errors}}</p>
+                </ng-container>
+                <button [disabled]="form.invalid" mat-stroked-button>Login</button>
+            </form>
+            <p>Don't have an account yet? <a routerLink="/auth/register">Register here</a></p>
         </fieldset>
     </div>
 </div>
-

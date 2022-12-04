@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/auth/auth.service';
 
@@ -8,7 +9,7 @@ import { AuthService } from 'src/app/auth/auth.service';
 })
 export class HeaderComponent {
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   get isLoggedIn() {
     return this.authService.isLoggedIn;
@@ -16,6 +17,11 @@ export class HeaderComponent {
 
   get user(){
     return this.authService.user;
+  }
+
+  logout(){
+    this.authService.logout()
+    this.router.navigate(['/'])
   }
 
 }

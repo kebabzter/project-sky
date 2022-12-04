@@ -1,17 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, filter, Subscription, tap } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { IUser } from '../shared/interfaces';
+const API_URL = environment.apiUrl
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-
-  private user$$ = new BehaviorSubject<undefined | null | IUser>(undefined);
-  user$ = this.user$$.asObservable().pipe(
-    filter((val): val is IUser | null => val !== undefined)
-  );
 
   user: IUser | null = null;
 
@@ -19,16 +16,28 @@ export class AuthService {
     return this.user !== null;
   }
 
-  subscription: Subscription;
+  constructor(private http: HttpClient) { }
 
-  constructor(private http: HttpClient) { 
-    this.subscription = this.user$.subscribe(user => {
-      this.user = user;
-    });
+  login(data: {}){
+    return this.http.post<IUser>(`${API_URL}/users/login`, data).pipe(
+      tap((user) => {
+        this.user = user;
+        localStorage.setItem('token', this.user.accessToken)
+      })
+    )
   }
 
-  login(email: string, password:string){
-    return this.http.post<any>('/users/login', {email, password})
-    .pipe(tap(user => this.user$$.next(user)));
+  register(data: {}){
+    return this.http.post<IUser>(`${API_URL}/users/register`, data).pipe(
+      tap((user) => {
+        this.user = user
+        localStorage.setItem('token', this.user.accessToken)
+      })
+    )
+  }
+
+  logout(){
+    this.user = null;
+    return localStorage.removeItem('token')
   }
 }

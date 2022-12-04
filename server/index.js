@@ -7,7 +7,7 @@ const authController = require("./controllers/authController");
 const trimBody = require("./middlewares/trimBody");
 const session = require("./middlewares/session");
 
-const connectionString = "mongodb://localhost:27017/rest-api-server";
+const connectionString = "mongodb://localhost:27017/project-sky";
 
 
 async function start() {

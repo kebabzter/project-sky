@@ -12,8 +12,8 @@ async function register(username, email, password){
         throw new Error('Email is taken');
     }
 
-    existing = await User.findOne({username}).collation({ locale: 'en', strength: 2})
-    if (username) {
+    const existingUsername = await User.findOne({username}).collation({ locale: 'en', strength: 2})
+    if (existingUsername) {
         throw new Error('Username is taken');
     }
 

@@ -57,8 +57,8 @@ h1{
     background-size: cover;
     background-position: center;
     width: 100%;
-    // height: auto;
-    height: calc(100vh - 6.5rem);
+    max-height: auto;
+    min-height: calc(100vh - 6.5rem);
     user-select: none;
 }
 

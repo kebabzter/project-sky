@@ -4,29 +4,36 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <h1 class="explore-title animate__animated animate__fadeInDown">EXPLORE PROJECTS</h1>
     <div>
-        <ul *ngIf="projects" class="project-cards">
-            <ng-container *ngFor="let project of projects">
-                <mat-card class="project-card animate__animated animate__fadeIn">
-                    <mat-card-header>
-                        <div mat-card-avatar class="project-header-image"></div>
-                        <mat-card-title>{{project.title}}</mat-card-title>
-                        <mat-card-subtitle>{{project.owner}}</mat-card-subtitle>
-                    </mat-card-header>
-                    <img mat-card-image src={{project.imageUrl}} alt="../../../assets/alt-image-projects.png">
-                    <mat-card-content>
-                        <p>
-                            {{project.description}}
-                        </p>
-                    </mat-card-content>
-                    <mat-card-actions>
-                        <button [routerLink]="['/projects', project._id]">Details</button>
-                        <button mat-button>Like</button>
-                    </mat-card-actions>
-                </mat-card>
-            </ng-container>
-        </ul>
-        <div class="display">
+
+        <ng-template #projectsTemplate>
+            <ul *ngIf="projects" class="project-cards">
+                <ng-container *ngFor="let project of projects">
+                    <mat-card class="project-card animate__animated animate__fadeIn">
+                        <mat-card-header>
+                            <div mat-card-avatar class="project-header-image"></div>
+                            <mat-card-title>{{project.title}}</mat-card-title>
+                            <mat-card-subtitle>{{project.owner}}</mat-card-subtitle>
+                        </mat-card-header>
+                        <img mat-card-image src={{project.imageUrl}} alt="../../../assets/alt-image-projects.png">
+                        <mat-card-content>
+                            <p>
+                                {{project.description}}
+                            </p>
+                        </mat-card-content>
+                        <mat-card-actions>
+                            <button [routerLink]="['/projects', project._id]">Details</button>
+                            <button mat-button>Like</button>
+                        </mat-card-actions>
+                    </mat-card>
+                </ng-container>
+            </ul>
+        </ng-template>
+        <ng-template #noProjectsTemplate>
+            <div class="display">
                 <h1 class="animate__animated animate__fadeInDown">There are no projects right now!</h1>
-        </div>
+            </div>
+        </ng-template>
+
+        <ng-container *ngTemplateOutlet="projects ? projectsTemplate : noProjectsTemplate"></ng-container>
     </div>
 </div>

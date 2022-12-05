@@ -1,4 +1,7 @@
-const {Schema, Type , model} = require('mongoose');
+const { Schema, Types, model } = require('mongoose');
+
+const URL_PATTERN = /^https?:\/\/.+$/i
+
 
 const projectSchema = new Schema({
     title: {
@@ -12,11 +15,14 @@ const projectSchema = new Schema({
         minlength: [20, 'Description must be at least 20 characters long']
     },
     imageUrl: {
-
+        type: String, required: true, validate: {
+            validator: (value) => URL_PATTERN.test(value),
+            message: 'Image URL is not valid'
+        }
     },
-    category: {
-        
-    }
+    owner: { type: Types.ObjectId, ref: 'User', required: true },
+    likeList: {type: [Types.ObjectId], ref:'User', default:[]}
+
 })
 
 const Project = model('Project', projectSchema)

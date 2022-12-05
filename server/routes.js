@@ -5,6 +5,7 @@ router.get('/', (req, res) => {
     let token = req.headers['X-Authorization'] | 'nothing'
     res.json(token)
 })
-router.use(authController)
+
+router.use('/users', authController);
     
 module.exports = router;

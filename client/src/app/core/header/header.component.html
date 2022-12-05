@@ -1,10 +1,7 @@
 <div class="header">
-    <a routerLink="/"><h2>SKY</h2></a>
-    <div class="main">
-        <ul>
-            <li><a routerLink="/projects/explore">Explore</a></li>
-        </ul>
-    </div>
+    <a routerLink="/">
+        <h2>SKY</h2>
+    </a>
 
     <ng-template #loggedOutTemplate>
         <ul>
@@ -20,7 +17,13 @@
     <ng-template #loggedInTemplate>
         <ul>
             <li>
-                <a routerLink="/auth/profile">{{user?.username}}'s profile</a>
+                <a routerLink="/projects/">Explore</a>
+            </li>
+            <li>
+                <a routerLink="/projects/create">Create Project</a>
+            </li>
+            <li class="profile">
+                <a routerLink="/auth/profile">{{user?.username}}'s Profile</a>
             </li>
             <li>
                 <a (click)="logout()">Logout</a>

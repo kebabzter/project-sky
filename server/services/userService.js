@@ -1,10 +1,19 @@
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const User = require("../models/User");
+const webConstants = require('../web-constants');
 
-const secret = 'g78h235u2h35ehhtuioerh89perh'
 
 const tokenBlacklist = new Set();
+
+const validateToken = (token) => {
+    try {
+        const data = jwt.verify(token, webConstants.SECRET_KEY)
+        return data
+    } catch (error) {
+        throw new Error('Invalid access token!')
+    }
+}
 
 async function register(username, email, password){
     const existing = await User.findOne({email}).collation({ locale: 'en', strength: 2})
@@ -56,21 +65,22 @@ function createToken(user){
         _id: user._id,
         username: user.username,
         email: user.email,
-        accessToken: jwt.sign(payload, secret)
+        accessToken: jwt.sign(payload, webConstants['JWT-SECRET'])
     }
 }
 
-function parseToken(token){
-    if (tokenBlacklist.has(token)) {
-        throw new Error('Token is blacklisted');
-    }
+// function parseToken(token){
+//     if (tokenBlacklist.has(token)) {
+//         throw new Error('Token is blacklisted');
+//     }
 
-    return jwt.verify(token, secret);
-}
+//     return jwt.verify(token, secret);
+// }
 
 module.exports = {
     register,
     login,
     logout,
-    parseToken
+    // parseToken,
+    validateToken
 }

@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const authController = require('./controllers/authController')
+const authController = require('./controllers/authController');
+const projectController = require('./controllers/projectController');
 
 router.get('/', (req, res) => {
     let token = req.headers['X-Authorization'] | 'nothing'
@@ -7,5 +8,6 @@ router.get('/', (req, res) => {
 })
 
 router.use('/users', authController);
+router.use('/projects', projectController)
     
 module.exports = router;

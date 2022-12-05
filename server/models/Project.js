@@ -21,7 +21,7 @@ const projectSchema = new Schema({
         }
     },
     owner: { type: Types.ObjectId, ref: 'User', required: true },
-    likeList: {type: [Types.ObjectId], ref:'User', default:[]}
+    // likeList: {type: [Types.ObjectId], ref:'User', default:[]}
 
 })
 

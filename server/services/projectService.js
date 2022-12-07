@@ -1,7 +1,7 @@
 const Project = require("../models/Project")
 
 async function getAll() {
-    return Project.find({})
+    return await Project.find({})
 }
 
 async function getById(id) {
@@ -24,6 +24,7 @@ async function createProject(data){
     try {
         return await Project.create({...data})
     } catch (error) {
+        console.log(error);
         return error
     }
 }

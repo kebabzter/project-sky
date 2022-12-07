@@ -36,6 +36,14 @@ export class AuthService {
     )
   }
 
+  getProfileData(){
+    return this.http.get<IUser>(`${API_URL}/auth`).pipe(
+      tap((user) => {
+        this.user = user;
+      })
+    )
+  }
+
   logout(){
     this.user = null;
     return localStorage.removeItem('token')

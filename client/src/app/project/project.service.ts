@@ -1,6 +1,7 @@
+import { AuthService } from './../auth/auth.service';
 import { IProject } from './../shared/interfaces/project';
 import { environment } from './../../environments/environment';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 const API_URL = environment.apiUrl;
 @Injectable({
@@ -8,7 +9,7 @@ const API_URL = environment.apiUrl;
 })
 export class ProjectService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private authService: AuthService) { }
 
   createProject(data : {}){
     return this.http.post(`${API_URL}/projects`, data)

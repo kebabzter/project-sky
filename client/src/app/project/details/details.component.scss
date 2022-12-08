@@ -1,0 +1,42 @@
+.container {
+    background-color: #0D1321;
+    background-size: cover;
+    background-position: center;
+    user-select: none;
+    width: 100%;
+    height: calc(100vh - 6.5rem);
+}
+
+.details-display{
+    position: absolute;
+    top:40%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    text-align: start;
+}
+
+.details-display img{
+    margin-top: 7rem;
+    max-width: 370px;
+    max-height: 340px;
+    
+}
+
+.details-display p{
+    font-size: 4rem;
+    font-weight: 100;
+    user-select: none;
+    color: #F0EBD8;
+    
+}
+
+.contents p {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 12px;
+    border: solid 2px #ccc;
+    font-size: 1rem;
+}

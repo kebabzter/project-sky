@@ -8,11 +8,13 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { CreateProjectComponent } from './create-project/create-project.component'
 import { FormsModule } from '@angular/forms';
+import { DetailsComponent } from './details/details.component';
 
 @NgModule({
   declarations: [
     AllProjectsComponent,
-    CreateProjectComponent
+    CreateProjectComponent,
+    DetailsComponent
   ],
   imports: [
     CommonModule,

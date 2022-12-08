@@ -12,9 +12,13 @@ export class ProjectService {
   constructor(private http: HttpClient, private authService: AuthService) { }
 
   createProject(data : {}){
-    return this.http.post(`${API_URL}/projects`, data)
+    return this.http.post(`${API_URL}/projects`, data, {withCredentials:true})
   }
   getAll(){
     return this.http.get<IProject[]>(`${API_URL}/projects`)
+  }
+
+  getById(id: string){
+    return this.http.get<IProject>(`${API_URL}/projects/${id}`, {withCredentials:true})
   }
 }

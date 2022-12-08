@@ -1,3 +1,4 @@
+import { DetailsComponent } from './details/details.component';
 import { CreateProjectComponent } from './create-project/create-project.component';
 import { AllProjectsComponent } from './all-projects/all-projects.component';
 import { NgModule } from '@angular/core';
@@ -15,11 +16,11 @@ const routes: Routes = [
       {
         path: 'create',
         component: CreateProjectComponent
+      },
+      {
+        path: ':id',
+        component: DetailsComponent
       }
-      // {
-      //   path: ':id',
-      //   component: 
-      // }
     ]
   }
 ];

@@ -1,4 +1,4 @@
-const { getAll, createProject } = require('../services/projectService');
+const { getAll, createProject, getById } = require('../services/projectService');
 
 const projectController = require('express').Router();
 
@@ -7,12 +7,22 @@ projectController.get('/', async (req, res) => {
     res.status(200).json(projects);
 })
 
+projectController.get('/:id', async (req, res) => {
+    try {
+        const id = req.params.id;
+        const project = await getById(id);
+        res.status(200).json(project);
+    } catch (error) {
+        res.status(400).json('Invalid project ID')
+    }
+})
+
 projectController.post('/', async (req, res) => {
     const data = req.body;
     try {
-        data.owner = req.user._id
+        // data.owner = req.user._id
         console.log(req.user);
-        // data.owner = '638cda7f832a309f7feb9455'
+        data.owner = '638cda7f832a309f7feb9455'
         const project = await createProject(data)
         res.status(201).json(project);
     } catch (error) {

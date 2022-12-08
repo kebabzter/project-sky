@@ -9,7 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProjectModule } from './project/project.module';
-import { appInterceptorProvider } from './app.interceptor';
+import { RouterModule } from '@angular/router';
+// import { appInterceptorProvider } from './app.interceptor';
 
 @NgModule({
   declarations: [
@@ -22,9 +23,16 @@ import { appInterceptorProvider } from './app.interceptor';
     CoreModule,
     AuthModule,
     HttpClientModule,
-    ProjectModule
+    ProjectModule,
+    // CommonModule,
+    // ProjectRoutingModule,
+    // MatCardModule,
+    // MatButtonModule,
+    // FormsModule,
+    RouterModule
   ],
-  providers: [appInterceptorProvider],
+  // providers: [appInterceptorProvider],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

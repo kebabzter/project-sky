@@ -19,9 +19,10 @@ projectController.get('/:id', async (req, res) => {
 
 projectController.post('/', async (req, res) => {
     const data = req.body;
+    console.log(req.user);
     try {
         // data.owner = req.user._id
-        console.log(req.user);
+        // console.log(req.user);
         data.owner = '638cda7f832a309f7feb9455'
         const project = await createProject(data)
         res.status(201).json(project);

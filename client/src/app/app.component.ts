@@ -1,3 +1,5 @@
+import { AuthService } from 'src/app/auth/auth.service';
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'client';
+  constructor(private http: HttpClient, private authService: AuthService) {
+    if (localStorage.getItem('token')) {
+      authService.getProfileData().subscribe();
+    }
+  }
 }

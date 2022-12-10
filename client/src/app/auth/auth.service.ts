@@ -37,7 +37,7 @@ export class AuthService {
   }
 
   getProfileData(){
-    return this.http.get<IUser>(`${API_URL}/auth`).pipe(
+    return this.http.get<IUser>(`${API_URL}/users`).pipe(
       tap((user) => {
         this.user = user;
       })

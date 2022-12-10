@@ -10,7 +10,6 @@ export class AppInterceptor implements HttpInterceptor {
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         const token = localStorage.getItem('token')
         if(token != null){
-            console.log(token);
             return next.handle(req.clone({headers: req.headers.set(HEADER_AUTH, token)}));
         }
             return next.handle(req.clone())

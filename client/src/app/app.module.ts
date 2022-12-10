@@ -9,7 +9,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProjectModule } from './project/project.module';
-import { RouterModule } from '@angular/router';
 import { appInterceptorProvider } from './app.interceptor';
 
 @NgModule({
@@ -26,7 +25,6 @@ import { appInterceptorProvider } from './app.interceptor';
     ProjectModule,
   ],
   providers: [appInterceptorProvider],
-  // providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

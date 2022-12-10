@@ -1,27 +1,30 @@
 <div class="container">
-    <div class="form">
-        <h1>Create Project</h1>
-        <form #form="ngForm" (ngSubmit)="createProject(form)">
-            <label>Title</label>
-            <input #title="ngModel" ngModel type="text" name="title" required minlength="5" maxlength="12">
-            <ng-container *ngIf="title.touched">
-                <p class="error" *ngIf="title.errors?.['required']">Title is required!</p>
-                <p class="error" *ngIf="title.errors?.['minlength']">Title should be at least 5 characters!</p>
-                <p class="error" *ngIf="title.errors?.['maxlength']">Title shouldn't have more than 12 characters!</p>
-            </ng-container>
-            <label>Description</label>
-            <input #description="ngModel" ngModel type="text" name="description" required minlength="50" maxlength="300">
-            <ng-container *ngIf="description.touched">
-                <p class="error" *ngIf="description.errors?.['required']">Description is required!</p>
-                <p class="error" *ngIf="description.errors?.['maxlength']">Description shouldn't have more than 300 characters!</p>
-                <p class="error" *ngIf="description.errors?.['minlength']">Description should be at least 50 characters!</p>
-            </ng-container>
-            <label>ImageUrl</label>
-            <input #imageUrl="ngModel" ngModel type="text" name="imageUrl" required>
-            <ng-container *ngIf="imageUrl.touched">
-                <p class="error" *ngIf="imageUrl.errors?.['required']">ImageUrl is required!</p>
-            </ng-container>
-            <button [disabled]="form.invalid" mat-stroked-button>Create Project</button>
-        </form>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <div class="form animate__animated animate__fadeIn">
+        <fieldset>
+            <h1>Create Project</h1>
+            <form #form="ngForm" (ngSubmit)="createProject(form)">
+                <label>Title</label>
+                <input #title="ngModel" ngModel type="text" name="title" required minlength="5" maxlength="12">
+                <ng-container *ngIf="title.touched">
+                    <p class="error" *ngIf="title.errors?.['required']">Title is required!</p>
+                    <p class="error" *ngIf="title.errors?.['minlength']">Title should be at least 5 characters!</p>
+                    <p class="error" *ngIf="title.errors?.['maxlength']">Title shouldn't have more than 12 characters!</p>
+                </ng-container>
+                <label>Description</label>
+                <input #description="ngModel" ngModel type="text" name="description" required minlength="50" maxlength="300">
+                <ng-container *ngIf="description.touched">
+                    <p class="error" *ngIf="description.errors?.['required']">Description is required!</p>
+                    <p class="error" *ngIf="description.errors?.['maxlength']">Description shouldn't have more than 300 characters!</p>
+                    <p class="error" *ngIf="description.errors?.['minlength']">Description should be at least 50 characters!</p>
+                </ng-container>
+                <label>ImageUrl</label>
+                <input #imageUrl="ngModel" ngModel type="text" name="imageUrl" required>
+                <ng-container *ngIf="imageUrl.touched">
+                    <p class="error" *ngIf="imageUrl.errors?.['required']">ImageUrl is required!</p>
+                </ng-container>
+                <button [disabled]="form.invalid" mat-stroked-button>Create Project</button>
+            </form>
+        </fieldset>
     </div>
 </div>

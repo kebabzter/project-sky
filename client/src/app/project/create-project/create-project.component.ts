@@ -15,7 +15,7 @@ export class CreateProjectComponent {
 
   createProject(form: NgForm){
     this.projectService.createProject(form.value).subscribe({
-      next: () => this.router.navigate(['/']),
+      next: () => this.router.navigate(['/projects']),
       error: (err) => {
         this.errors = err.error.error
       }

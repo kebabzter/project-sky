@@ -7,36 +7,54 @@
     height: calc(100vh - 6.5rem);
 }
 
-.details-display{
+.card{
     position: absolute;
-    top:40%;
-    left:50%;
+    top:45%;
+    left:20%;
     transform: translate(-50%, -50%);
     text-align: start;
+    max-height: 400px;
+    max-width: 500;
 }
 
-.details-display img{
+.card img{
     margin-top: 7rem;
     max-width: 370px;
     max-height: 340px;
     
 }
 
-.details-display p{
+.project-image{
+    min-height: 300px;
+    min-width: 300px;
+}
+
+.title {
     font-size: 4rem;
     font-weight: 100;
     user-select: none;
     color: #F0EBD8;
-    
+    margin-bottom: 2rem;
 }
 
-.contents p {
+.description{
+    margin-top: 10rem;
+    margin-left: auto;
+    margin-right: auto;
     overflow-wrap: break-word;
     word-wrap: break-word;
     hyphens: auto;
     max-width: 300px;
-    margin: 0 auto;
+    // margin: 0 auto;
     padding: 12px;
     border: solid 2px #ccc;
+    border-radius: 10px;
     font-size: 1rem;
+    color: #F0EBD8;
 }
+
+.contents{
+    background-color: #1D2D44;
+    border-radius: 10px;
+}
+

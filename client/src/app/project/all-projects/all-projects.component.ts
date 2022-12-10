@@ -13,7 +13,7 @@ export class AllProjectsComponent{
   constructor(private projectService: ProjectService) {
     this.getAll()
   }
-  
+
   getAll(){
     this.projects = undefined;
     this.projectService.getAll().subscribe((projects) => this.projects = projects)

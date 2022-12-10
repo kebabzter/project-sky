@@ -7,8 +7,9 @@ const webConstants = require('../web-constants');
 const tokenBlacklist = new Set();
 
 const validateToken = (token) => {
+    console.log(token);
     try {
-        const data = jwt.verify(token, webConstants.SECRET_KEY)
+        const data = jwt.verify(token, webConstants['JWT-SECRET'])
         return data
     } catch (error) {
         throw new Error('Invalid access token!')

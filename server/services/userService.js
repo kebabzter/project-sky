@@ -54,6 +54,10 @@ async function logout(token){
     tokenBlacklist.add(token);
 }
 
+async function getUserById(id){
+    return await User.findById(id);
+}
+
 function createToken(user){
     const payload = {
         _id: user._id,
@@ -69,18 +73,10 @@ function createToken(user){
     }
 }
 
-// function parseToken(token){
-//     if (tokenBlacklist.has(token)) {
-//         throw new Error('Token is blacklisted');
-//     }
-
-//     return jwt.verify(token, secret);
-// }
-
 module.exports = {
     register,
     login,
     logout,
-    // parseToken,
-    validateToken
+    validateToken,
+    getUserById
 }

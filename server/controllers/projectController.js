@@ -1,9 +1,14 @@
 const { getAll, createProject, getById } = require('../services/projectService');
+const { getUserById } = require('../services/userService');
 
 const projectController = require('express').Router();
 
 projectController.get('/', async (req, res) => {
     const projects = await getAll();
+    for(let project of projects){
+        let id = project.owner;
+        project.owner = await getUserById(id);
+    }
     res.status(200).json(projects);
 })
 

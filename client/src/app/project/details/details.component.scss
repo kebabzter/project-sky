@@ -10,50 +10,54 @@
 .card{
     position: absolute;
     top:45%;
-    left:20%;
+    left:30%;
     transform: translate(-50%, -50%);
     text-align: start;
-    max-height: 400px;
-    max-width: 500;
-}
-
-.card img{
-    margin-top: 7rem;
-    max-width: 370px;
-    max-height: 340px;
-    
 }
 
 .project-image{
-    min-height: 300px;
-    min-width: 300px;
+    height: 440px;
+    width: 600px;
+    margin-top: 30px;
 }
 
 .title {
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 100;
     user-select: none;
     color: #F0EBD8;
-    margin-bottom: 2rem;
+    position: absolute;
+}
+
+.out-card{
+    position: absolute;
+    left: 50%;
+    top: 22%;
+    min-width: 600px;
+    width: 600px;
 }
 
 .description{
-    margin-top: 10rem;
-    margin-left: auto;
-    margin-right: auto;
     overflow-wrap: break-word;
     word-wrap: break-word;
     hyphens: auto;
     max-width: 300px;
-    // margin: 0 auto;
+    margin: 0 auto;
     padding: 12px;
-    border: solid 2px #ccc;
+    border: solid 2px #748cabff;
     border-radius: 10px;
-    font-size: 1rem;
+    font-size: 15px;
     color: #F0EBD8;
+    position: absolute;
+    margin-top: 20px;
+    background-color: #1D2D44;
 }
 
 .contents{
+    height: 500px;
+    width: 600px;
+    // max-height: 500px;
+    // max-width: 700xp;
     background-color: #1D2D44;
     border-radius: 10px;
 }

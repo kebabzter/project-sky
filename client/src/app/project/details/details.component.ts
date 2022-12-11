@@ -22,11 +22,15 @@ export class DetailsComponent {
     const id = this.activatedRoute.snapshot.params['id'];
     this.projectService.getById(id).subscribe({
       next: (project) => {
-        this.project = project
+        if (project) {
+          this.project = project
+        }else{
+          this.router.navigate(['error'])
+        }
       },
       error: (err) => {
         console.log(err);
-        this.router.navigate(['/'])
+        this.router.navigate(['error'])
       }
     })
   }

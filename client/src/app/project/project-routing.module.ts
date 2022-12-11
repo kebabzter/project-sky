@@ -3,6 +3,7 @@ import { CreateProjectComponent } from './create-project/create-project.componen
 import { AllProjectsComponent } from './all-projects/all-projects.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ErrorComponent } from '../auth/error/error.component';
 
 const routes: Routes = [
   {
@@ -20,8 +21,16 @@ const routes: Routes = [
       {
         path: ':id',
         component: DetailsComponent
-      }
+      },
     ]
+  },
+  {
+    path: 'error',
+    component: ErrorComponent
+  },
+  {
+    path: '**',
+    redirectTo: 'error'
   }
 ];
 

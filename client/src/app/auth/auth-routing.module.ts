@@ -1,3 +1,4 @@
+import { ErrorComponent } from './error/error.component';
 import { RouterModule, Routes } from "@angular/router";
 import { LoginComponent } from "./login/login.component";
 import { LogoutComponent } from "./logout/logout.component";
@@ -40,9 +41,14 @@ const routes: Routes = [
             title: 'Profile',
             loginRequired: true
         }
+      },
+      {
+        path: '**',
+        component: ErrorComponent
       }
     ]
-  }
+  },
+  
 ];
 
 export const AuthRoutingModule = RouterModule.forChild(routes);

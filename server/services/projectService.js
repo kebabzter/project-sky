@@ -16,6 +16,10 @@ async function editProject(id, data){
     }
 }
 
+async function getByUserId(_id){
+    return await Project.find({owner: _id})
+}
+
 async function deleteProject(id){
     await Project.findByIdAndRemove(id);
 }
@@ -34,5 +38,6 @@ module.exports = {
     getById,
     editProject,
     deleteProject,
-    createProject
+    createProject,
+    getByUserId
 }

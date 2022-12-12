@@ -1,3 +1,4 @@
+import { IProject } from './../shared/interfaces/project';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, filter, Subscription, tap } from 'rxjs';
@@ -42,6 +43,10 @@ export class AuthService {
         this.user = user;
       })
     )
+  }
+
+  getProfileProjects(){
+    return this.http.get<IProject[]>(`${API_URL}/users/getPersonal`)
   }
 
   logout(){

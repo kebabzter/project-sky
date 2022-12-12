@@ -14,6 +14,7 @@ export class ProjectService {
   createProject(data : {}){
     return this.http.post(`${API_URL}/projects`, data, {withCredentials:true})
   }
+  
   getAll(){
     return this.http.get<IProject[]>(`${API_URL}/projects`)
   }

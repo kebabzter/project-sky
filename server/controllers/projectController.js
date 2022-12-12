@@ -1,4 +1,4 @@
-const { getAll, createProject, getById } = require('../services/projectService');
+const { getAll, createProject, getById, getByUserId } = require('../services/projectService');
 const { getUserById } = require('../services/userService');
 
 const projectController = require('express').Router();

@@ -16,6 +16,8 @@ projectController.get('/:id', async (req, res) => {
     try {
         const id = req.params.id;
         const project = await getById(id);
+        const owner = await getUserById(project.owner);
+        project.owner = owner
         res.status(200).json(project);
     } catch (error) {
         res.status(400).json('Invalid project ID')

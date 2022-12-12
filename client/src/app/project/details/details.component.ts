@@ -23,6 +23,8 @@ export class DetailsComponent {
     this.projectService.getById(id).subscribe({
       next: (project) => {
         if (project) {
+          console.log(project);
+          
           this.project = project
         }else{
           this.router.navigate(['error'])

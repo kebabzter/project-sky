@@ -1,7 +1,7 @@
 <div class="container">
     <div class="out-card">
         <h1 class="title">{{project?.title}}</h1>
-        <h3>Created by</h3>
+        <h3 class="created">Created by <a routerLink="/auth/profile/:id">{{project?.owner?.username}}</a></h3>
         <p class="description">{{project?.description}}</p>
     </div>
     <div class="card">

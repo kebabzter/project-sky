@@ -1,10 +1,12 @@
 <div class="container">
-    <div class="out-card">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <div class="out-card animate__animated animate__fadeIn">
         <h1 class="title">{{project?.title}}</h1>
         <h3 class="created">Created by <a routerLink="/auth/profile/:id">{{project?.owner?.username}}</a></h3>
         <p class="description">{{project?.description}}</p>
     </div>
-    <div class="card">
+    <div class="card animate__animated animate__fadeIn">
         <div class="contents">
             <img class="project-image" src="{{project?.imageUrl}}" alt="">
         </div>

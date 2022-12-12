@@ -33,11 +33,11 @@ fieldset {
     width: 360px;
     height: 500px;
     background-color: #1d2d44ff;
-    box-shadow: 0px 20px 50px rgb(14, 33, 49);
+    box-shadow: 0px 20px 50px #0d1321;
 }
 
 .container {
-    background-image: linear-gradient(to right,  #0d1321 0%, #1d2d44 25% ,#3e5c76 50%, #1d2d44 75%,#0d1321 100%);
+    background-image: linear-gradient(to right,  #0d1321 0%, #1d2d44 50% ,#3e5c76 100%);
     background-size: cover;
     background-position: center;
     user-select: none;

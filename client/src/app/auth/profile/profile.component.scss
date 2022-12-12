@@ -5,6 +5,7 @@
     margin-left: 55px;
     margin-right: 55px;
     margin-bottom: 55px;
+    box-shadow: 5px 5px 10px #0d1321;
 }
 
 h1{
@@ -64,7 +65,7 @@ h1{
 
 
 .container{
-    background-image: linear-gradient(to right,  #0d1321 0%, #1d2d44 25% ,#3e5c76 50%, #1d2d44 75%,#0d1321 100%);
+    background-image: linear-gradient(to right,  #0d1321 0%, #1d2d44 50% ,#3e5c76 100%);
     background-size: cover;
     background-position: center;
     width: 100%;

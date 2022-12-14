@@ -27,10 +27,10 @@
         </ng-template>
         <ng-template #noProjectsTemplate>
             <div class="display">
-                <h1 class="animate__animated animate__fadeInDown">User has no projects!</h1>
+                <h1 class="animate__animated animate__fadeInDown">You have no projects!</h1>
             </div>
         </ng-template>
 
-        <ng-container *ngTemplateOutlet="projects?.length != 0 ? projectsTemplate : noProjectsTemplate"></ng-container>
+        <ng-container *ngTemplateOutlet="projects? projectsTemplate : noProjectsTemplate"></ng-container>
     </div>
 </div>

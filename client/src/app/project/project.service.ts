@@ -22,4 +22,8 @@ export class ProjectService {
   getById(id: string){
     return this.http.get<IProject>(`${API_URL}/projects/${id}`, {withCredentials:true})
   }
+
+  editProject(id: string| undefined, data: {}){    
+    return this.http.put<IProject>(`${API_URL}/projects/${id}`, data);
+  }
 }

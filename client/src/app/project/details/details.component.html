@@ -1,14 +1,51 @@
 <div class="container">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
-    <div class="out-card animate__animated animate__fadeIn">
-        <h1 class="title">{{project?.title}}</h1>
-        <h3 class="created">Created by <a routerLink="/auth/profile/:id">{{project?.owner?.username}}</a></h3>
-        <p class="description">{{project?.description}}</p>
-    </div>
-    <div class="card animate__animated animate__fadeIn">
-        <div class="contents">
-            <img class="project-image" src="{{project?.imageUrl}}" alt="">
+    <ng-container *ngIf="!editMode">
+        <div class="out-card animate__animated animate__fadeIn">
+            <h1 class="title">{{project?.title}}</h1>
+            <h3 class="created">Created by <a routerLink="/auth/profile/:id">{{project?.owner?.username}}</a></h3>
+            <p class="description">{{project?.description}}</p>
+            <ng-container *ngIf="isAuthor">
+                <button class="edit" (click)="editMode = true" mat-raised-button>Edit</button>
+            </ng-container>
         </div>
-    </div>
+        <div class="card animate__animated animate__fadeIn">
+            <div class="contents">
+                <img class="project-image" src="{{project?.imageUrl}}" alt="">
+            </div>
+        </div>
+    </ng-container>
+
+    <ng-container *ngIf="editMode">
+        <div class="form animate__animated animate__fadeIn">
+            <fieldset>
+                <h1>Edit Project</h1>
+                <form #form="ngForm" (ngSubmit)="editProject(form)">
+                    <label>Title</label>
+                    <input #title="ngModel" ngModel type="text" name="title" required minlength="5" maxlength="12" [ngModel]="project?.title">
+                    <ng-container *ngIf="title.touched">
+                        <p class="error" *ngIf="title.errors?.['required']">Title is required!</p>
+                        <p class="error" *ngIf="title.errors?.['minlength']">Title should be at least 5 characters!</p>
+                        <p class="error" *ngIf="title.errors?.['maxlength']">Title shouldn't have more than 12 characters!</p>
+                    </ng-container>
+                    <label>Description</label>
+                    <input #description="ngModel" ngModel type="text" name="description" required minlength="50" maxlength="300" [ngModel]="project?.description">
+                    <ng-container *ngIf="description.touched">
+                        <p class="error" *ngIf="description.errors?.['required']">Description is required!</p>
+                        <p class="error" *ngIf="description.errors?.['maxlength']">Description shouldn't have more than 300 characters!</p>
+                        <p class="error" *ngIf="description.errors?.['minlength']">Description should be at least 50 characters!</p>
+                    </ng-container>
+                    <label>ImageUrl</label>
+                    <input #imageUrl="ngModel" ngModel type="text" name="imageUrl" required [ngModel]="project?.imageUrl">
+                    <ng-container *ngIf="imageUrl.touched">
+                        <p class="error" *ngIf="imageUrl.errors?.['required']">ImageUrl is required!</p>
+                    </ng-container>
+                    <button class="submit-btn" [disabled]="form.invalid" mat-raised-button>Edit Project</button>
+                </form>
+                <button class="back" (click)="editMode = false" mat-raised-button>Back</button>
+            </fieldset>
+            <img class="image-displayer" src={{imageUrl.value}} alt="../../../assets/alt-image-projects.png">
+        </div>
+    </ng-container>
 </div>

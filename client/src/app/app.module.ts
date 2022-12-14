@@ -13,7 +13,7 @@ import { appInterceptorProvider } from './app.interceptor';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,

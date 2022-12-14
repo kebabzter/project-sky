@@ -1,4 +1,4 @@
-const { getAll, createProject, getById, getByUserId } = require('../services/projectService');
+const { getAll, createProject, getById, getByUserId, editProject } = require('../services/projectService');
 const { getUserById } = require('../services/userService');
 
 const projectController = require('express').Router();
@@ -21,6 +21,25 @@ projectController.get('/:id', async (req, res) => {
         res.status(200).json(project);
     } catch (error) {
         res.status(400).json('Invalid project ID')
+    }
+})
+
+projectController.put('/:id', async (req,res) => {
+    const id = req.params.id;
+    const data= req.body;
+    const project = await getById(id);
+    const owner = await getUserById(project.owner);
+    try {
+        if (req?.user._id == project.owner._id) {
+            await editProject(id, data);
+            const newProject = await getById(id);
+            newProject.owner = owner;
+            res.status(200).json(newProject);
+        }else{
+            throw new Error('You are not the owner of this project!')
+        }
+    } catch (error) {
+        res.status(400).json({error:error.message});
     }
 })
 

@@ -15,7 +15,7 @@ import { DetailsComponent } from './details/details.component';
   declarations: [
     AllProjectsComponent,
     CreateProjectComponent,
-    DetailsComponent
+    DetailsComponent,
   ],
   imports: [
     CommonModule,

@@ -47,7 +47,7 @@ export class DetailsComponent {
 
   editProject(form: NgForm){
     if (this.authService.user?._id != this.project?.owner._id || !this.token) {
-      this.router.navigate(['**'])
+      this.router.navigate(['**']);
     }
     const id = this.project?._id;
     this.projectService.editProject(id, form.value).subscribe({
@@ -56,6 +56,19 @@ export class DetailsComponent {
         this.editMode = false;
       },
       error: (err) =>{
+        this.errors = err.error?.error;
+      }
+    })
+  }
+  
+  deleteProject(){
+    if (this.authService.user?._id != this.project?.owner._id || !this.token) {
+      this.router.navigate(['**']);
+    }
+    const id = this.project?._id;
+    this.projectService.deleteProject(id).subscribe({
+      next: () => this.router.navigate(['/projects']),
+      error: (err) => {
         this.errors = err.error?.error;
       }
     })

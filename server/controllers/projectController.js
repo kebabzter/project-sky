@@ -1,4 +1,6 @@
-const { getAll, createProject, getById, getByUserId, editProject } = require('../services/projectService');
+const { findById } = require('../models/Project');
+const User = require('../models/User');
+const { getAll, createProject, getById, getByUserId, editProject, deleteProject } = require('../services/projectService');
 const { getUserById } = require('../services/userService');
 
 const projectController = require('express').Router();
@@ -51,6 +53,17 @@ projectController.post('/', async (req, res) => {
         res.status(201).json(project);
     } catch (error) {
         res.status(400).json({error: error.message})
+    }
+})
+
+projectController.delete('/:id', async(req ,res) => {
+    const id = req.params.id;
+    const project = await getById(id)
+    if (project.owner._id == req.user._id) {
+        await deleteProject(id);
+        res.status(200).json('Deleted project successfully');
+    }else{
+        res.status(400).json({error: 'You are not the owner of this project!'})
     }
 })
 

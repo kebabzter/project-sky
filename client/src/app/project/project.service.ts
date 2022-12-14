@@ -12,18 +12,22 @@ export class ProjectService {
   constructor(private http: HttpClient, private authService: AuthService) { }
 
   createProject(data : {}){
-    return this.http.post(`${API_URL}/projects`, data, {withCredentials:true})
+    return this.http.post(`${API_URL}/projects`, data, {withCredentials:true});
   }
   
   getAll(){
-    return this.http.get<IProject[]>(`${API_URL}/projects`)
+    return this.http.get<IProject[]>(`${API_URL}/projects`);
   }
 
   getById(id: string){
-    return this.http.get<IProject>(`${API_URL}/projects/${id}`, {withCredentials:true})
+    return this.http.get<IProject>(`${API_URL}/projects/${id}`, {withCredentials:true});
   }
 
   editProject(id: string| undefined, data: {}){    
     return this.http.put<IProject>(`${API_URL}/projects/${id}`, data);
+  }
+
+  deleteProject(id : string | undefined){
+    return this.http.delete(`${API_URL}/projects/${id}`);
   }
 }

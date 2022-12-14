@@ -6,8 +6,9 @@
             <h1 class="title">{{project?.title}}</h1>
             <h3 class="created">Created by <a routerLink="/auth/profile/:id">{{project?.owner?.username}}</a></h3>
             <p class="description">{{project?.description}}</p>
-            <ng-container *ngIf="isAuthor">
+            <ng-container *ngIf="isAuthor" class="buttons">
                 <button class="edit" (click)="editMode = true" mat-raised-button>Edit</button>
+                <button class="delete" (click)="deleteProject()" mat-raised-button>Delete</button>
             </ng-container>
         </div>
         <div class="card animate__animated animate__fadeIn">

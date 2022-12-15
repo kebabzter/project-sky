@@ -40,3 +40,21 @@ Project SKY is a project created with educational purposes, using Angular as a F
     * jsonwebtoken: 8.5.1,
     * mongoose: 6.7.3
 
+
+## Installation
+
+To run this project, in the project directory, you should run:
+
+```bash
+  $ cd client
+  $ npm install
+  $ ng serve
+```
+This opens the app at http://localhost:4200 in your browser. However it will not operate until you start the REST API server. In order to do so in the project directory you should do the following steps:
+```bash
+  $ cd server
+  $ npm install
+  $ npm start
+```
+And the server will start listening on port 3030.
+    

@@ -30,7 +30,7 @@ Project SKY is a project created with educational purposes, using Angular as a F
 ## Technologies
 
 * Client
-    * Angular CLI : 15.0.4
+    * Angular CLI : 14.2.10
     * TypeScript : 4.7.2
 * Server 
     * bcrypt: 5.1.0

@@ -1,3 +1,4 @@
+import { AuthGuard } from './../core/guards/auth.guard';
 import { DetailsComponent } from './details/details.component';
 import { CreateProjectComponent } from './create-project/create-project.component';
 import { AllProjectsComponent } from './all-projects/all-projects.component';
@@ -16,7 +17,11 @@ const routes: Routes = [
       },
       {
         path: 'create',
-        component: CreateProjectComponent
+        component: CreateProjectComponent,
+        canActivate: [AuthGuard],
+        data:{
+          'guest': false
+        }
       },
       {
         path: ':id',

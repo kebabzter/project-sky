@@ -33,7 +33,7 @@ import { ErrorComponent } from './error/error.component'
     MatInputModule,
     MatSelectModule,
     MatButtonModule,
-    MatCardModule,
+    MatCardModule
   ],
   // exports:[
   //   LoginComponent,

@@ -1,3 +1,4 @@
+import { AuthGuard } from './../core/guards/auth.guard';
 import { ErrorComponent } from './error/error.component';
 import { RouterModule, Routes } from "@angular/router";
 import { LoginComponent } from "./login/login.component";
@@ -13,33 +14,42 @@ const routes: Routes = [
       {
         path: 'login',
         component: LoginComponent,
+        canActivate: [AuthGuard],
         data:{
             title: 'Login',
-            loginRequired: false
+            loginRequired: false,
+            'guest': true
         }
       },
       {
         path: 'register',
         component: RegisterComponent,
+        canActivate: [AuthGuard],
         data:{
             title: 'Register',
-            loginRequired: false
+            loginRequired: false,
+            'guest': true
         }
       },
       {
         path: 'logout',
         component: LogoutComponent,
+        canActivate: [AuthGuard],
         data:{
             title: 'Logout',
-            loginRequired: true
+            loginRequired: true,
+            'guest': false
+
         }
       },
       {
         path: 'profile',
         component: ProfileComponent,
+        canActivate: [AuthGuard],
         data:{
             title: 'Profile',
-            loginRequired: true
+            loginRequired: true,
+            'guest': false
         }
       },
       {

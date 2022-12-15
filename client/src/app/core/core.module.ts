@@ -1,3 +1,4 @@
+import { AuthGuard } from './guards/auth.guard';
 import { SharedModule } from './../shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -24,6 +25,7 @@ import { MatButtonModule } from '@angular/material/button'
     HomeComponent,
     FooterComponent,
     HeaderComponent,
-  ]
+  ],
+  providers: [AuthGuard]
 })
 export class CoreModule { }

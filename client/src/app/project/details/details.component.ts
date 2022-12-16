@@ -5,10 +5,27 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 
+import{
+trigger,
+state,
+style,
+transition,
+animate
+} from '@angular/animations'
+
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
-  styleUrls: ['./details.component.scss']
+  styleUrls: ['./details.component.scss'],
+  animations: [
+    trigger('photoState', [
+      state('enlarge', style({
+        transform: 'scale(1.5) translateX(+50%)'
+      })),
+      transition('spin => move', animate('2000ms ease-out')),
+      transition('* => *', animate('500ms ease')),
+    ])
+  ]
 })
 export class DetailsComponent {
 
@@ -17,9 +34,14 @@ export class DetailsComponent {
   editMode: boolean = false;
   errors: Object | undefined
   isAuthor: boolean = false;
-
+  position: string = '';
+  isEnlarged: boolean = false
   constructor(private projectService: ProjectService, private authService: AuthService,private router: Router, private activatedRoute: ActivatedRoute) {
     this.getProject();
+  }
+
+  changePosition(newPosition: string){
+    this.position = newPosition
   }
 
   getProject(): void {

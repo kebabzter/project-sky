@@ -10,6 +10,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { CreateProjectComponent } from './create-project/create-project.component'
 import { FormsModule } from '@angular/forms';
 import { DetailsComponent } from './details/details.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { DetailsComponent } from './details/details.component';
     MatButtonModule,
     FormsModule,
     RouterModule,
-    SharedModule
+    SharedModule,
+    BrowserAnimationsModule
   ],
   exports:[
     AllProjectsComponent

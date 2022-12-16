@@ -13,7 +13,9 @@
         </div>
         <div class="card animate__animated animate__fadeIn">
             <div class="contents">
-                <img class="project-image" src="{{project?.imageUrl}}" alt="">
+                <img class="project-image" src="{{project?.imageUrl}}" [@photoState]="position">
+                <button class="scale" (click)="changePosition('enlarge')" mat-raised-button>Enlarge Image</button>
+                <button class="scale" (click)="changePosition('null')" mat-raised-button>Reset</button>
             </div>
         </div>
     </ng-container>

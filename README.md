@@ -18,13 +18,10 @@ Project SKY is a project created with educational purposes, using Angular as a F
 
 ## Screenshots
 
-![App Screenshot](https://cdn.discordapp.com/attachments/960121710953254912/1052987371257335918/image.png)
-
-![App Screenshot](https://cdn.discordapp.com/attachments/960121710953254912/1052996048630587443/image.png)
-
-![App Screenshot](https://cdn.discordapp.com/attachments/960121710953254912/1052996108915327027/image.png)
-
-![App Screenshot](https://cdn.discordapp.com/attachments/960121710953254912/1052996145359618118/image.png)
+<img src="https://cdn.discordapp.com/attachments/960121710953254912/1052987371257335918/image.png" width="49%"></img> 
+<img src="https://cdn.discordapp.com/attachments/960121710953254912/1052996048630587443/image.png" width="49%"></img> 
+<img src="https://cdn.discordapp.com/attachments/960121710953254912/1052996108915327027/image.png" width="49%"></img>
+<img src="https://cdn.discordapp.com/attachments/960121710953254912/1052996145359618118/image.png" width="49%"></img> 
 
 
 ## Technologies
@@ -41,7 +38,7 @@ Project SKY is a project created with educational purposes, using Angular as a F
     * mongoose: 6.7.3
 
 
-## Installation
+## Setup
 
 To run this project, in the project directory, you should run:
 

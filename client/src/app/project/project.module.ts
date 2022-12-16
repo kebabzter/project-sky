@@ -11,12 +11,14 @@ import { CreateProjectComponent } from './create-project/create-project.componen
 import { FormsModule } from '@angular/forms';
 import { DetailsComponent } from './details/details.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
     AllProjectsComponent,
     CreateProjectComponent,
     DetailsComponent,
+    ProfileComponent,
   ],
   imports: [
     CommonModule,

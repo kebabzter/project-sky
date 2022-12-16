@@ -58,6 +58,10 @@ async function getUserById(id){
     return await User.findById(id);
 }
 
+async function getUserByUsername(username){
+    return await User.findOne({username: username});
+}
+
 function createToken(user){
     const payload = {
         _id: user._id,
@@ -73,10 +77,13 @@ function createToken(user){
     }
 }
 
+
+
 module.exports = {
     register,
     login,
     logout,
     validateToken,
-    getUserById
+    getUserById,
+    getUserByUsername
 }

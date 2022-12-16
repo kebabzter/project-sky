@@ -30,4 +30,8 @@ export class ProjectService {
   deleteProject(id : string | undefined){
     return this.http.delete(`${API_URL}/projects/${id}`);
   }
+
+  getAllByUser(username: string){
+    return this.http.get<IProject[]>(`${API_URL}/users/profile/${username}`);
+  }
 }

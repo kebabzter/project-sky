@@ -22,7 +22,6 @@ export class ProfileComponent{
    getMyProjects(){
     this.authService.getProfileProjects().subscribe({
       next: (value) => {
-        console.log(value);
         
         if (value.length > 0) {
           this.projects = value;

@@ -2,7 +2,7 @@ const authController = require('express').Router();
 const { body, validationResult } = require('express-validator');
 const { getByUserId } = require('../services/projectService');
 
-const { register, login, logout } = require('../services/userService');
+const { register, login, logout, getUserByUsername } = require('../services/userService');
 const { parseError } = require('../util/parser');
 
 authController.get('/', async (req, res) => {
@@ -44,6 +44,15 @@ authController.get('/logout', async (req, res) => {
 authController.get('/getPersonal', async (req, res) => {
     const userId = req.user._id;
     const projects = await getByUserId(userId);
+    res.status(200).json(projects);
+    res.end();
+})
+
+authController.get('/profile/:id', async (req, res) => {
+    const username = req.params.id;
+    const currentUser = await getUserByUsername(username);
+    const projects = await getByUserId(currentUser._id);
+    console.log(projects);
     res.status(200).json(projects);
     res.end();
 })

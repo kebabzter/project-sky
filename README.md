@@ -16,13 +16,14 @@ Project SKY is a project created with educational purposes, using Angular as a F
 
 
 
-## Screenshots
+## Showcase
 
 <img src="https://cdn.discordapp.com/attachments/960121710953254912/1052987371257335918/image.png" width="49%"></img> 
 <img src="https://cdn.discordapp.com/attachments/960121710953254912/1052996048630587443/image.png" width="49%"></img> 
 <img src="https://cdn.discordapp.com/attachments/960121710953254912/1052996108915327027/image.png" width="49%"></img>
 <img src="https://cdn.discordapp.com/attachments/960121710953254912/1052996145359618118/image.png" width="49%"></img> 
 
+Trailer/Showcase of the application: https://www.youtube.com/watch?v=UQFKCHP4qCo
 
 ## Technologies
 

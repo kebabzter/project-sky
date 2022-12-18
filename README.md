@@ -40,19 +40,12 @@ Trailer/Showcase of the application: https://www.youtube.com/watch?v=UQFKCHP4qCo
 
 
 ## Setup
-
-To run this project, in the project directory, you should run:
-
-```bash
-  $ cd client
-  $ npm install
-  $ ng serve
-```
-This opens the app at http://localhost:4200 in your browser. However it will not operate until you start the REST API server. In order to do so in the project directory you should do the following steps:
+You can access the app by visiting: https://project-sky-15e73.web.app. However it will not operate until you start the REST API server. In order to do so in the project directory you should do the following steps:
 ```bash
   $ cd server
   $ npm install
   $ npm start
 ```
 And the server will start listening on port 3030.
-    
+
+In case of any issues make sure you are using the Google Chrome browser as others for example Brave may cause issues

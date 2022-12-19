@@ -40,7 +40,13 @@ Trailer/Showcase of the application: https://www.youtube.com/watch?v=UQFKCHP4qCo
 
 
 ## Setup
-You can access the app by visiting: https://project-sky-15e73.web.app. However it will not operate until you start the REST API server. In order to do so in the project directory you should do the following steps:
+You can access the app by visiting: https://project-sky-15e73.web.app or can install it locally: 
+```bash
+  $ cd client
+  $ npm install
+  $ ng serve
+```
+However, it will not operate until you start the REST API server. In order to do so in the project directory you should do the following steps:
 ```bash
   $ cd server
   $ npm install

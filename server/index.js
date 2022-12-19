@@ -7,7 +7,7 @@ const initDatabase = require("./configs/database");
 const webConstants = require('./web-constants')
 
 
-app.use(cors({credentials: true, origin: 'https://project-sky-15e73.web.app', allowHeaders: ['Content-Type, X-Authorization']}))
+app.use(cors({credentials: true, origin: '*', allowHeaders: ['Content-Type, X-Authorization']}))
 app.use(express.json());
 app.use(authMiddleware);
 app.use(router)

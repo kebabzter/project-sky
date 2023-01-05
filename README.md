@@ -40,7 +40,7 @@ Trailer/Showcase of the application: https://www.youtube.com/watch?v=UQFKCHP4qCo
 
 
 ## Setup
-You can access the app by visiting: https://project-sky-15e73.web.app or can install it locally: 
+You can access the front end of the app by visiting: https://project-sky-15e73.web.app or can install it locally: 
 ```bash
   $ cd client
   $ npm install

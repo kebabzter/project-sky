@@ -15,13 +15,13 @@ const validateToken = (token) => {
     }
 }
 
-async function register(username, email, password){
-    const existing = await User.findOne({email}).collation({ locale: 'en', strength: 2})
+async function register(username, email, password) {
+    const existing = await User.findOne({ email }).collation({ locale: 'en', strength: 2 })
     if (existing) {
         throw new Error('Email is taken');
     }
 
-    const existingUsername = await User.findOne({username}).collation({ locale: 'en', strength: 2})
+    const existingUsername = await User.findOne({ username }).collation({ locale: 'en', strength: 2 })
     if (existingUsername) {
         throw new Error('Username is taken');
     }
@@ -36,8 +36,8 @@ async function register(username, email, password){
 
 }
 
-async function login(email, password){
-    const user = await User.findOne({email}).collation({ locale: 'en', strength: 2})
+async function login(email, password) {
+    const user = await User.findOne({ email }).collation({ locale: 'en', strength: 2 })
     if (!user) {
         throw new Error('Incorrect email or password');
     }
@@ -50,19 +50,19 @@ async function login(email, password){
     return createToken(user);
 }
 
-async function logout(token){
+async function logout(token) {
     tokenBlacklist.add(token);
 }
 
-async function getUserById(id){
+async function getUserById(id) {
     return await User.findById(id);
 }
 
-async function getUserByUsername(username){
-    return await User.findOne({username: username});
+async function getUserByUsername(username) {
+    return await User.findOne({ username: username });
 }
 
-function createToken(user){
+function createToken(user) {
     const payload = {
         _id: user._id,
         username: user.username,
